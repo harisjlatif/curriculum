@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :trainer, Trainer.Repo,
+config :curriculum, Curriculum.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
@@ -16,7 +16,7 @@ config :trainer, Trainer.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :trainer, TrainerWeb.Endpoint,
+config :curriculum, CurriculumWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}],
@@ -25,8 +25,8 @@ config :trainer, TrainerWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "kh+14Q/6k/0Ht5Iaoe/bczDyx4gZfY0zFSwlzZ43tSqI79i65xVu9KNAqTmhiGna",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:trainer, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:trainer, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:curriculum, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:curriculum, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,7 +53,7 @@ config :trainer, TrainerWeb.Endpoint,
 # different ports.
 
 # Reload browser tabs when matching files change.
-config :trainer, TrainerWeb.Endpoint,
+config :curriculum, CurriculumWeb.Endpoint,
   live_reload: [
     web_console_logger: true,
     patterns: [
@@ -62,13 +62,13 @@ config :trainer, TrainerWeb.Endpoint,
       # Gettext translations
       ~r"priv/gettext/.*\.po$",
       # Router, Controllers, LiveViews and LiveComponents
-      ~r"lib/trainer_web/router\.ex$",
-      ~r"lib/trainer_web/(controllers|live|components)/.*\.(ex|heex)$"
+      ~r"lib/curriculum_web/router\.ex$",
+      ~r"lib/curriculum_web/(controllers|live|components)/.*\.(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :trainer, dev_routes: true
+config :curriculum, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"

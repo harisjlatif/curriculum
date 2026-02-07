@@ -5,7 +5,7 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :trainer, Trainer.Repo,
+config :curriculum, Curriculum.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
@@ -15,7 +15,7 @@ config :trainer, Trainer.Repo,
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :trainer, TrainerWeb.Endpoint,
+config :curriculum, CurriculumWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "i/4YSj7Fpnbju9uyxBY1xUBq8DkGcz46Z+2nXIpA17vdA47oPWyXJ9XAn4yG+3he",
   server: false

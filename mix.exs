@@ -1,9 +1,9 @@
-defmodule Trainer.MixProject do
+defmodule Curriculum.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :trainer,
+      app: :curriculum,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -20,7 +20,7 @@ defmodule Trainer.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Trainer.Application, []},
+      mod: {Curriculum.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -42,7 +42,7 @@ defmodule Trainer.MixProject do
     [
       {:phoenix, "~> 1.8.3"},
       {:phoenix_ecto, "~> 4.5"},
-      {:ecto_sql, "~> 3.13"},
+      {:ecto_sql, "~> 3.12"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},

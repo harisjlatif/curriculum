@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :trainer,
-  ecto_repos: [Trainer.Repo],
+config :curriculum,
+  ecto_repos: [Curriculum.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configure the endpoint
-config :trainer, TrainerWeb.Endpoint,
+config :curriculum, CurriculumWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: TrainerWeb.ErrorHTML, json: TrainerWeb.ErrorJSON],
+    formats: [html: CurriculumWeb.ErrorHTML, json: CurriculumWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Trainer.PubSub,
+  pubsub_server: Curriculum.PubSub,
   live_view: [signing_salt: "ybYhBh8r"]
 
 # Configure esbuild (the version is required)
